@@ -8,7 +8,7 @@ To use this programm you will need to install python, installation : https://www
 For linux user you will also need "pip" if not installed with python.
 
 ### OpenAI access
-To use openAI you will need to create a .env file and add 'OPENAI_API_KEY = [your_key]' to it
+To use openAI you will need to create a .env file and add 'OPENAI_API_KEY = your_key' to it
 
 ### Google Cloud access
 To use natural language AI from google cloud you will need an account and access to the api. See google tutorial at : https://cloud.google.com/natural-language/docs/reference/libraries?hl=fr#windows
