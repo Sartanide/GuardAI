@@ -1,22 +1,25 @@
 # import for files
 import api_caller;
-import test_generator;
 import get_file;
-import file_formatter;
 import analyse
 import print_result
 import save_data
 # import for librairy
 import sys;
-import json
 
 
 def main(conanSrc):
   csvData = get_file.getCsvFile(conanSrc)
+  
   # get result
-  responses = api_caller.callChatGPT(csvData)
+  responsesGoogle = api_caller.callBard(csvData)
+  responsesChatgpt = api_caller.callChatGPT(csvData)
+  
   # analyse results
-  results = analyse.analyseChatGPT(responses)
+  results = []
+  results.append((analyse.analyseGoogle(responsesGoogle), "google"))
+  results.append((analyse.analyseChatGPT(responsesChatgpt), "chatgpt"))
+  
   # create a render based on results
   print_result.printResult(results)
   save_data.saveDataCsv(results)

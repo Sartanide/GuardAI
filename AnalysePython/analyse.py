@@ -19,3 +19,19 @@ def analyseChatGPT(responseList: list):
     i += 1
   return responseDict
       
+def analyseGoogle(responseList: list):
+  i = 1
+  length = len(responseList)
+  responseDict: dict = {}
+  for phrase,response,type in responseList:
+    print("analyse : " + str(i) + '/' + str(length))
+    i += 1
+    iResp = 0
+    lengthResp = len(response)
+    while (iResp < lengthResp and response[iResp].confidence < 0.6):
+      iResp += 1
+    if type in responseDict :
+      responseDict[type] = (responseDict[type][0] + int(iResp < lengthResp), responseDict[type][1] + 1)
+    else :
+      responseDict[type] = (int(iResp < lengthResp), 1)
+  return responseDict
