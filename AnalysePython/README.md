@@ -43,5 +43,11 @@ to start with argument you can use this call
 python .\main.py ./CONAN-master/Multitarget-CONAN/Multitarget-CONAN.csv --filename result --ai google,chatgpt --save_path ./saved_data/ --no-interface
 ```
 
+## How it works
+![alt text](https://github.com/Sartanide/GuardAI/blob/main/assets/Schematic%20Analyze%20GuardAI.jpg)
+
+## Example of interface
+![alt text](https://github.com/Sartanide/GuardAI/blob/main/assets/interface.png)
+
 ## Source
 using dataset from CONAN : https://github.com/marcoguerini/CONAN
