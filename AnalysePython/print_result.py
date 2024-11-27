@@ -1,5 +1,5 @@
 # Print results in console
-# results: {typeOfDiscrimination: (numberOfRightAnswers: number, numberOfAnswers: number)}
+# results: ({typeOfDiscrimination: (numberOfRightAnswers: number, numberOfAnswers: number)}, aiTested: string)
 def printResult(results: dict):
   for resultList, name in results:
     print('=========================')

@@ -1,6 +1,8 @@
-# Groupe de navatt_l 1010002
+# GuardAI Analyze application
 
 ## Install
+Python is required for this application.
+
 to install you will need openai and google-cloud on venv
 ```
 py -m venv <venv_name>
@@ -12,7 +14,7 @@ pip install openai python-dotenv google-cloud-storage
 to use openAI you will need to create a .env file and add 'OPENAI_API_KEY = [your_key]' to it
 
 ## Google Cloud
-To use natural language AI from google cloud you will need an account and access to the api. See google tutorial at : https://cloud.google.com/natural-language/docs/reference/libraries?hl=fr#windows
+To use natural language AI from google cloud you will need an account and access to the api. See google tutorial at : https://cloud.google.com/natural-language/docs/reference/libraries?hl=fr#windows. You will need to add the path to the google file in the .env like so : 'BARD_API_KEY = "path_to_key"'
 
 ## Use
 to start you can use this call

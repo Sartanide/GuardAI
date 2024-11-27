@@ -1,10 +1,10 @@
 import csv
 
 # Save data in a csv file
-# results: {typeOfDiscrimination: (numberOfRightAnswers: number, numberOfAnswers: number)}
+# results: ({typeOfDiscrimination: (numberOfRightAnswers: number, numberOfAnswers: number)}, aiTested: string)
 # !NotRequired filename: string
 # !NotRequired save_path: string
-def saveDataCsv(results: list, filename: str = '-result-test.csv', save_path: str = ""):
+def saveDataCsv(results: list, filename: str = '-result-test.csv', save_path: str = "saved_data/"):
     head = ['type', 'nombre de correct', 'total', 'pourcentage']
     rows = []
     for resultList, name in results:
