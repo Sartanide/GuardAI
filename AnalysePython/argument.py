@@ -1,5 +1,6 @@
 import sys;
 
+# Initialisation of parameters and insertion of argument if given in parameters
 def getArguments ():
   filename = "result"
   aiList = ['google', 'chatgpt']

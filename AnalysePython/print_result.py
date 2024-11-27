@@ -1,3 +1,5 @@
+# Print results in console
+# results: {typeOfDiscrimination: (numberOfRightAnswers: number, numberOfAnswers: number)}
 def printResult(results: dict):
   for resultList, name in results:
     print('=========================')

@@ -10,9 +10,13 @@ path = os.getenv("BARD_API_KEY")
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = path
 google = language.LanguageServiceClient()
 
+# Used for google response
 def confidence(category: language.ClassificationCategory) -> float:
     return category.confidence
 
+# Call chatGPT using given phrasesList
+# phrasesList: [(phraseToSend: string, typeOfDiscrimination: string)]
+# return [(phraseSent: string, AiResponse: any, typeOfDiscrimination: string)]
 def callChatGPT(phrasesList: list):
   i = 1
   length = len(phrasesList)
@@ -25,8 +29,10 @@ def callChatGPT(phrasesList: list):
     responseList.append((phrase, response, type))
     i += 1
   return responseList
-#response_chatgpt = completion.choices[0].message.content
 
+# Call chatGPT using given phrase
+# phrase: (phraseToSend: string, typeOfDiscrimination: string)
+# return (phraseSent: string, AiResponse: any, typeOfDiscrimination: string)
 def callChatGPT_once(phrase: tuple):
   print("Call chatgpt phrase : " + phrase[0])
   response = client.moderations.create(
@@ -34,8 +40,10 @@ def callChatGPT_once(phrase: tuple):
   )
   print(response)
   return (phrase[0], response, phrase[1])
-#response_chatgpt = completion.choices[0].message.content
 
+# Call Google using given phrasesList
+# phrasesList: [(phraseToSend: string, typeOfDiscrimination: string)]
+# return [(phraseSent: string, AiResponse: any, typeOfDiscrimination: string)]
 def callBard(phrasesList: list):
   i = 1
   length = len(phrasesList)
@@ -56,6 +64,9 @@ def callBard(phrasesList: list):
     i += 1
   return responseList
 
+# Call Google using given phrase
+# phrase: (phraseToSend: string, typeOfDiscrimination: string)
+# return (phraseSent: string, AiResponse: any, typeOfDiscrimination: string)
 def callBard_once(phrase: tuple):
   print("Call bard phrase : " + phrase[0])
   document = language.Document(

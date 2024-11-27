@@ -3,6 +3,7 @@ from tkinter import *;
 from tkinter import filedialog;
 from tkinter import ttk;
 
+# Initialization of all parameters
 filename = "result"
 aiList = ['google', 'chatgpt']
 save_path = ""
@@ -84,19 +85,20 @@ def createInterface (input = None):
   # create a label for the combobox
   label = Label(right_frame, text="Select ai to test:")
   
-  # create a Listbox widget for the dropdown list
+  # create a Listbox widget for the dropdown list where AI can be choosen
   listbox = Listbox(right_frame, selectmode="multiple", exportselection=0, listvariable=chosenAi)
   for ai in aiList:
     listbox.insert(END, ai)
   for ai in range(len(chosenAi)):
     listbox.selection_set(ai)
   
-  #Confirm button
+  # Confirm button
   confirmBtn = Button(bottom_left_frame, text="Confirm", bg="green", fg="white", command=confirm)
   
-  #Cancel button
+  # Cancel button
   cancelBtn = Button(bottom_right_frame, text="Cancel", bg="red", fg="white", command=interface.destroy)
   
+  # Style
   labelInputFilename.grid(column=0, ipady=1, padx=10)
   inputFilename.grid(column=0, padx=10)
   datasetBtn.grid(column=0, pady=10, padx=10)

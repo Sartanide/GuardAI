@@ -1,5 +1,6 @@
-
-
+# Analyse data from ChatGPT
+# responseList: [{phraseSent: string, AiResponse: any, typeOfDiscrimination: string}]
+# return {typeOfDiscrimination: (numberOfRightAnswers: number, numberOfAnswers: number)}
 def analyseChatGPT(responseList: list):
   i = 1
   length = len(responseList)
@@ -19,6 +20,9 @@ def analyseChatGPT(responseList: list):
     i += 1
   return responseDict
       
+# Analyse data from Google
+# responseList: [{phraseSent: string, AiResponse: any, typeOfDiscrimination: string}]
+# return {typeOfDiscrimination: (numberOfRightAnswers: number, numberOfAnswers: number)}
 def analyseGoogle(responseList: list):
   i = 1
   length = len(responseList)

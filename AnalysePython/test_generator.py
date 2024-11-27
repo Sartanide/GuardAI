@@ -1,3 +1,4 @@
+# WIP
 def generatePhrases(templateList, doubleList):
   # a table containing the list of phrases of each template
   outputPhrasesTable = []
